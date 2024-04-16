@@ -171,12 +171,12 @@ writeToProfile(
         .toIfAlone("r", {}, { halt: true })
         .toDelayedAction(toKey("vk_none"), toKey("r"))
         .toIfHeldDown("l⇧", "l⌥⌃", { halt: true })
-        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 250 }),
+        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 180 }),
       map("u")
         .toIfAlone("u", {}, { halt: true })
         .toDelayedAction(toKey("vk_none"), toKey("u"))
         .toIfHeldDown("l⇧", "l⌥⌃", { halt: true })
-        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 250 }),
+        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 180 }),
     ]),
   ],
   {
