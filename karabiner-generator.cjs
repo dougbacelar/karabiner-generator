@@ -171,15 +171,19 @@ writeToProfile(
         .toIfAlone("r", {}, { halt: true })
         .toDelayedAction(toKey("vk_none"), toKey("r"))
         .toIfHeldDown("l⇧", "l⌥⌃", { halt: true })
-        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 180 }),
+        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 140 }),
       map("u")
         .toIfAlone("u", {}, { halt: true })
         .toDelayedAction(toKey("vk_none"), toKey("u"))
         .toIfHeldDown("l⇧", "l⌥⌃", { halt: true })
-        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 180 }),
+        .parameters({ "basic.to_if_held_down_threshold_milliseconds": 140 }),
+    ]),
+
+    rule("caps = hyper or escape").manipulators([
+      map("caps_lock").toHyper().toIfAlone("escape"),
     ]),
   ],
   {
-    "basic.to_if_held_down_threshold_milliseconds": 150,
+    "basic.to_if_held_down_threshold_milliseconds": 140,
   },
 );
